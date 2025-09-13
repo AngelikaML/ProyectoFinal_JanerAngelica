@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SISPARK</string>
+    <string name="title_activity_principal">INICIO</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Sistema de Información para Parqueaderos</string>
+    <string name="nav_header_subtitle">SISPARK</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_mensual">Ingréso Mensual</string>
+    <string name="menu_diario">Ingréso Diario</string>
+    <string name="menu_horas">Ingréso por horas</string>
+    <string name="menu_usuario">Ingresar Usuario</string>
+</resources>

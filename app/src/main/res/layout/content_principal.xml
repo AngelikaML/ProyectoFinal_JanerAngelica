@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_principal">
+
+    <TextView
+        android:id="@+id/placa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Ingrése Placa"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/campoPlaca"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Placa"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/placa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnValidar"
+        android:layout_width="223dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="VALIDAR"
+        android:backgroundTint="#4472C4"
+        app:layout_constraintTop_toBottomOf="@id/campoPlaca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollTabla"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/btnValidar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:padding="16dp">
+
+                <TableRow
+                    android:background="#cccccc"
+                    android:padding="8dp">
+                    <TextView
+                        android:text="ID"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="PLACA"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="FECHA ENTRADA"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+                    <TextView
+                        android:text="FECHA SALIDA"
+                        android:textStyle="bold"
+                        android:padding="8dp" />
+                </TableRow>
+
+                <TableRow android:padding="8dp">
+                    <TextView android:text="Placa1-C1" android:padding="8dp" />
+                    <TextView android:text="Placa1-C2" android:padding="8dp" />
+                    <TextView android:text="Placa1-C3" android:padding="8dp" />
+                    <TextView android:text="Placa1-C4" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow android:padding="8dp">
+                    <TextView android:text="Placa2-C1" android:padding="8dp" />
+                    <TextView android:text="Placa2-C2" android:padding="8dp" />
+                    <TextView android:text="Placa2-C3" android:padding="8dp" />
+                    <TextView android:text="Placa2-C4" android:padding="8dp" />
+                </TableRow>
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
