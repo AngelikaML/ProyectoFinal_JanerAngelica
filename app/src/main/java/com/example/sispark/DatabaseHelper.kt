@@ -44,7 +44,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         inputStream.close()
     }
 
-    // Abre la base de datos si no existe, copia la base de datos desde assets
     fun openDatabase(): SQLiteDatabase {
         val dbFile = File(DB_PATH + DATABASE_NAME)
         if (!dbFile.exists()) {
