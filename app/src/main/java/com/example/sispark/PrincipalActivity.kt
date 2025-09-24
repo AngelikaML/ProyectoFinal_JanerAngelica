@@ -15,6 +15,7 @@ import com.example.sispark.databinding.ActivityPrincipalBinding
 class PrincipalActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalBinding
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,8 @@ class PrincipalActivity : AppCompatActivity() {
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarPrincipal.toolbar)
+
+        dbHelper = DatabaseHelper(this)
 
         val valor = "ABC123"
 
@@ -52,10 +55,28 @@ class PrincipalActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener { menuItem: MenuItem ->
             when (menuItem.itemId) {
 
+
+                R.id.nav_salir -> {
+                    salirApp()
+                }
             }
             drawerLayout.closeDrawers()
             true
         }
 
     }
+
+    private fun salirApp() {
+        try {
+            val db = dbHelper.openDatabase()
+            if (db.isOpen) {
+                db.close()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        finishAffinity() // Cierra todas las actividades y sale de la app
+    }
+
 }

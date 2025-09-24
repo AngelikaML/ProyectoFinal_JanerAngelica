@@ -23,5 +23,11 @@
             android:id="@+id/nav_usuario"
             android:icon="@drawable/ic_menu_usuario"
             android:title="@string/menu_usuario" />
+
+        <item
+            android:id="@+id/nav_salir"
+            android:icon="@drawable/avion_de_papel"
+            android:title="Salir" />
+
     </group>
 </menu>
