@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -22,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val campoUsuario = findViewById<EditText>(R.id.campoUsuario)
         val campoPassword = findViewById<EditText>(R.id.campoPasword)
         val btnEntrar = findViewById<Button>(R.id.btnEntrar)
+        val linkReg = findViewById<TextView>(R.id.linkRegistrar)
 
         btnEntrar.setOnClickListener {
             val usuario = campoUsuario.text.toString().trim()
@@ -29,15 +31,23 @@ class LoginActivity : AppCompatActivity() {
 
             if (usuario.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Debe ingresar usuario y contraseña", Toast.LENGTH_SHORT).show()
-            } else if (validateUserLogin(usuario, password)) {
-                Toast.makeText(this, "Inicio exitoso", Toast.LENGTH_SHORT).show()
+            }
+            else if (validateUserLogin(usuario, password)) {
+                Toast.makeText(this, "Bienvenido ${getUsuarioDeSesion()}", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, PrincipalActivity::class.java)
                 startActivity(intent)
                 finish()
-            } else {
+            }
+            else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
         }
+
+        linkReg.setOnClickListener {
+            val intent = Intent(this, UsuarioActivity::class.java)
+            startActivity(intent)
+            finish()
+        };
     }
 
     private fun validateUserLogin(username: String, password: String): Boolean {
@@ -48,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         try {
             db = dbHelper.openDatabase()
             cursor = db.rawQuery(
-                "SELECT IdUsuario, Nombre, Apellido FROM USUARIOS WHERE usuario = ? AND contrasena = ?",
+                "SELECT IdUsuario, Nombre, Apellido FROM USUARIOS WHERE usuario = ? AND contrasena = ? AND IdEstado = 1",
                 arrayOf(username, password)
             )
 
@@ -61,8 +71,8 @@ class LoginActivity : AppCompatActivity() {
                 UserSession.idUsuario = idUsuario
                 UserSession.nombre = nombre
                 UserSession.apellido = apellido
+                guardarUsuarioEnSesion(UserSession.idUsuario, UserSession.nombre!!, UserSession.apellido!!)
 
-                Toast.makeText(this, "Bienvenido ${UserSession.getNombreCompleto()}", Toast.LENGTH_SHORT).show()
                 isValidUser = true
             }
         }
@@ -85,5 +95,13 @@ class LoginActivity : AppCompatActivity() {
         editor.putString("Apellido", apellido)
         editor.apply()
     }
+
+    private fun getUsuarioDeSesion(): String {
+        val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+        val nombre = prefs.getString("Nombre", "")
+        val apellido = prefs.getString("Apellido", "")
+        return "$nombre $apellido".trim()
+    }
+
 
 }
