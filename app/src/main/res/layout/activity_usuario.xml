@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/ber"
-    android:backgroundTint="@color/teal_700"
     tools:context=".UsuarioActivity">
 
     <TextView
@@ -20,7 +18,8 @@
         android:gravity="center"
         android:padding="16dp"
         android:text="USUARIO"
-        android:textSize="24sp"
+        android:textColor="#2C3E50"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <EditText
@@ -29,35 +28,50 @@
         android:layout_height="wrap_content"
         android:hint="Identificación"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/apellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Apellido"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Usuario"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/contraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <EditText
         android:id="@+id/estado"
@@ -65,7 +79,10 @@
         android:layout_height="wrap_content"
         android:hint="Estado"
         android:inputType="text"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,6 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
+            android:backgroundTint="#009600"
             android:text="Guardar" />
 
         <Button
@@ -89,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="4dp"
             android:layout_weight="1"
+            android:backgroundTint="#009600"
             android:text="Actualizar" />
 
     </LinearLayout>
@@ -106,6 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_weight="1"
+            android:backgroundTint="#009600"
             android:text="Nuevo" />
     </LinearLayout>
 

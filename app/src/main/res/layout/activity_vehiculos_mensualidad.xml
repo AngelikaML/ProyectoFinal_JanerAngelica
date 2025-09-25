@@ -7,23 +7,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/ber"
-    android:backgroundTint="@color/teal_700"
     tools:context=".VehiculosMensualidadActivity">
 
     <TextView
         android:id="@+id/Titulo"
-        android:layout_width="380dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginTop="65dp"
         android:gravity="center"
         android:padding="16dp"
         android:text="VEHICULOS POR MENSUALIDAD"
+        android:textColor="#2C3E50"
         android:textSize="22sp"
         android:textStyle="bold" />
 
-
+    <!-- EditText con estilo mejorado -->
     <EditText
         android:id="@+id/placa"
         android:layout_width="match_parent"
@@ -31,7 +30,10 @@
         android:layout_marginTop="20dp"
         android:hint="Placa"
         android:inputType="text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/marca"
@@ -39,7 +41,10 @@
         android:layout_height="wrap_content"
         android:hint="Marca"
         android:inputType="text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/propietario"
@@ -47,7 +52,10 @@
         android:layout_height="wrap_content"
         android:hint="Propietario"
         android:inputType="text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/fecha_ingreso"
@@ -55,7 +63,10 @@
         android:layout_height="wrap_content"
         android:hint="Fecha de Ingreso"
         android:inputType="date"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/fecha_salida"
@@ -63,7 +74,10 @@
         android:layout_height="wrap_content"
         android:hint="Fecha de Salida"
         android:inputType="date"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/valor_pagar"
@@ -71,7 +85,10 @@
         android:layout_height="wrap_content"
         android:hint="Valor a Pagar"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
     <EditText
         android:id="@+id/celda"
@@ -79,12 +96,16 @@
         android:layout_height="wrap_content"
         android:hint="Celda"
         android:inputType="text"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
 
+    <!-- Botones -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="13dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -94,23 +115,29 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Guardar" />
+            android:backgroundTint="#009600"
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="12dp" />
 
         <Button
             android:id="@+id/actualizar"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Actualizar" />
-
-
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:backgroundTint="#009600"
+            android:text="Actualizar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="12dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -120,9 +147,11 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Nuevo" />
-
+            android:backgroundTint="#009600"
+            android:text="Nuevo"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:padding="12dp" />
     </LinearLayout>
-
 
 </LinearLayout>

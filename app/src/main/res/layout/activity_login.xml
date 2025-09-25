@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ber"
-    android:backgroundTint="@color/teal_700"
+    android:backgroundTint="#C8FFC8"
     tools:context=".LoginActivity">
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="120dp"
         android:text="Iniciar Sesión"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:id="@+id/imagenLogo"
         android:layout_width="242dp"
         android:layout_height="196dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/logo_moderno_de_sispark"
         app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"
         android:hint="Usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
@@ -51,6 +54,9 @@
         android:layout_marginTop="20dp"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/campoUsuario" />
@@ -63,6 +69,7 @@
         android:text="INGRESAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#009600"
         app:layout_constraintTop_toBottomOf="@id/campoPasword" />
 
     <!-- Hipervínculo para registrar usuario -->

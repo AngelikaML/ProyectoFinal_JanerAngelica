@@ -228,11 +228,11 @@ class PrincipalActivity : AppCompatActivity() {
             val tv = TextView(this)
             tv.text = header
             tv.setPadding(20, 20, 20, 20)
-            tv.setTextColor(Color.WHITE)
+            tv.setTextColor(Color.parseColor("#2C3E50"))
             tv.setTypeface(null, Typeface.BOLD)
             tv.textSize = 14f
             tv.gravity = Gravity.CENTER
-            tv.setBackgroundColor(Color.parseColor("#4472C4")) // azul
+            tv.setBackgroundColor(Color.parseColor("#C8FFC8")) // azul
             headerRow.addView(tv)
         }
         tableLayout.addView(headerRow)
