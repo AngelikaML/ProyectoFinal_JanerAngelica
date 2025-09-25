@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SISPARK"
         tools:targetApi="31">
-
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -21,17 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".PrincipalActivity"
             android:exported="true"
             android:label="@string/title_activity_principal"
             android:theme="@style/Theme.SISPARK.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity
+            android:name=".UsuarioActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".VehiculosMensualidadActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

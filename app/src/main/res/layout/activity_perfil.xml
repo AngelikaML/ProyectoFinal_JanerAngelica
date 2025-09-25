@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/io_fondo"
+    android:padding="16dp"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/Perfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="PERFIL"
+            android:textColor="#009600"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Foto de perfil -->
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/img_usuario"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="0dp"/>
+
+        <!-- Nombre y Apellido -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingTop="50dp"
+            android:text="-- ----"
+            android:textColor="#009600"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <!-- Ident -->
+        <TextView
+            android:id="@+id/tvIdentificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="123456789"
+            android:textColor="#009600"
+            android:textSize="18sp"/>
+
+        <!-- Teléfono -->
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="+34 600 000 000"
+            android:textColor="#009600"
+            android:textSize="18sp"/>
+
+        <!-- usuario -->
+        <TextView
+            android:id="@+id/tvUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="---"
+            android:textColor="#009600"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+</ScrollView>

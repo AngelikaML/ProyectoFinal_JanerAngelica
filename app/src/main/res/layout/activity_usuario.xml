@@ -6,19 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/io_fondo"
     android:padding="16dp"
     tools:context=".UsuarioActivity">
 
     <TextView
         android:id="@+id/Usuario"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="16dp"
         android:text="USUARIO"
-        android:textColor="#2C3E50"
+        android:textColor="#009600"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -27,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Identificación"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_style"
         android:textColor="#333333"
@@ -84,49 +85,57 @@
         android:textColor="#333333"
         android:padding="12dp"/>
 
+    <!-- Botones -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="73dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
 
         <Button
-            android:id="@+id/btn_guardar"
+            android:id="@+id/guardar"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:backgroundTint="#009600"
-            android:text="Guardar" />
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:padding="12dp" />
 
         <Button
-            android:id="@+id/btn_actualizar"
-            android:layout_width="8dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="4dp"
+            android:id="@+id/actualizar"
+            android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="8dp"
             android:backgroundTint="#009600"
-            android:text="Actualizar" />
-
+            android:text="Actualizar"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:padding="12dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
 
         <Button
-            android:id="@+id/btn_nuevo"
+            android:id="@+id/nuevo"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:backgroundTint="#009600"
-            android:text="Nuevo" />
+            android:text="Nuevo"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:padding="12dp" />
     </LinearLayout>
 
 </LinearLayout>

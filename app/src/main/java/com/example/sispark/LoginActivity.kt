@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -46,7 +47,6 @@ class LoginActivity : AppCompatActivity() {
         linkReg.setOnClickListener {
             val intent = Intent(this, UsuarioActivity::class.java)
             startActivity(intent)
-            finish()
         };
     }
 
@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         try {
             db = dbHelper.openDatabase()
             cursor = db.rawQuery(
-                "SELECT IdUsuario, Nombre, Apellido FROM USUARIOS WHERE usuario = ? AND contrasena = ? AND IdEstado = 1",
+                "SELECT IdUsuario, Nombre, Apellido, usuario FROM USUARIOS WHERE usuario = ? AND contrasena = ? AND IdEstado = 1",
                 arrayOf(username, password)
             )
 
@@ -66,12 +66,15 @@ class LoginActivity : AppCompatActivity() {
                 val idUsuario = cursor.getInt(cursor.getColumnIndexOrThrow("IdUsuario"))
                 val nombre = cursor.getString(cursor.getColumnIndexOrThrow("Nombre"))
                 val apellido = cursor.getString(cursor.getColumnIndexOrThrow("Apellido"))
+                val usuario = cursor.getString(cursor.getColumnIndexOrThrow("usuario"))
 
                 // Guardamos en la sesión
                 UserSession.idUsuario = idUsuario
                 UserSession.nombre = nombre
                 UserSession.apellido = apellido
-                guardarUsuarioEnSesion(UserSession.idUsuario, UserSession.nombre!!, UserSession.apellido!!)
+                UserSession.usuario = usuario
+                guardarUsuarioEnSesion(UserSession.idUsuario, UserSession.nombre!!, UserSession.apellido!!,
+                    UserSession.usuario!!)
 
                 isValidUser = true
             }
@@ -87,12 +90,13 @@ class LoginActivity : AppCompatActivity() {
         return isValidUser
     }
 
-    private fun guardarUsuarioEnSesion(idUsuario: Int, nombre: String, apellido: String) {
+    private fun guardarUsuarioEnSesion(idUsuario: Int, nombre: String, apellido: String, usuario: String) {
         val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
         val editor = prefs.edit()
         editor.putInt("IdUsuario", idUsuario)
         editor.putString("Nombre", nombre)
         editor.putString("Apellido", apellido)
+        editor.putString("usuario", usuario)
         editor.apply()
     }
 

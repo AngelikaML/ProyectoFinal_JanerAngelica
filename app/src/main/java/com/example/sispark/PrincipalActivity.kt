@@ -13,6 +13,7 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.drawerlayout.widget.DrawerLayout
@@ -33,7 +34,6 @@ class PrincipalActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.appBarPrincipal.toolbar)
@@ -69,6 +69,7 @@ class PrincipalActivity : AppCompatActivity() {
             }
 
             llenarTabla()
+            binding.appBarPrincipal.contentPrincipal.campoPlaca.text.clear()
         }
 
         val toolbar: Toolbar = binding.appBarPrincipal.toolbar
@@ -92,19 +93,21 @@ class PrincipalActivity : AppCompatActivity() {
                 R.id.nav_mensual -> {
                     val intent = Intent(this, VehiculosMensualidadActivity::class.java)
                     startActivity(intent)
-                    finish()
                 }
 
                 R.id.nav_horas -> {
                     val intent = Intent(this, PrincipalActivity::class.java)
                     startActivity(intent)
-                    finish()
                 }
 
                 R.id.nav_usuario -> {
                     val intent = Intent(this, UsuarioActivity::class.java)
                     startActivity(intent)
-                    finish()
+                }
+
+                R.id.nav_perfil -> {
+                    val intent = Intent(this, PerfilActivity::class.java)
+                    startActivity(intent)
                 }
 
                 R.id.nav_salir -> {
@@ -230,7 +233,7 @@ class PrincipalActivity : AppCompatActivity() {
             tv.setPadding(20, 20, 20, 20)
             tv.setTextColor(Color.parseColor("#2C3E50"))
             tv.setTypeface(null, Typeface.BOLD)
-            tv.textSize = 14f
+            tv.textSize = 13f
             tv.gravity = Gravity.CENTER
             tv.setBackgroundColor(Color.parseColor("#C8FFC8")) // azul
             headerRow.addView(tv)
@@ -253,7 +256,7 @@ class PrincipalActivity : AppCompatActivity() {
                     val tv = TextView(this)
                     tv.text = col
                     tv.setPadding(20, 20, 20, 20)
-                    tv.textSize = 13f
+                    tv.textSize = 12f
                     tv.gravity = Gravity.CENTER
                     tv.setBackgroundResource(R.drawable.celda_borde) // borde + fondo
                     fila.addView(tv)

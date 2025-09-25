@@ -7,19 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@drawable/io_fondo"
     tools:context=".VehiculosMensualidadActivity">
 
     <TextView
         android:id="@+id/Titulo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="16dp"
         android:text="VEHICULOS POR MENSUALIDAD"
-        android:textColor="#2C3E50"
-        android:textSize="22sp"
+        android:textColor="#009600"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <!-- EditText con estilo mejorado -->
@@ -80,17 +81,6 @@
         android:padding="12dp" />
 
     <EditText
-        android:id="@+id/valor_pagar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valor a Pagar"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/edittext_style"
-        android:textColor="#333333"
-        android:padding="12dp" />
-
-    <EditText
         android:id="@+id/celda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,11 +91,22 @@
         android:textColor="#333333"
         android:padding="12dp" />
 
+    <EditText
+        android:id="@+id/valor_pagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor a Pagar"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_style"
+        android:textColor="#333333"
+        android:padding="12dp" />
+
     <!-- Botones -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="18dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -125,22 +126,13 @@
             android:id="@+id/actualizar"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:layout_marginHorizontal="8dp"
             android:backgroundTint="#009600"
             android:text="Actualizar"
             android:textColor="#FFFFFF"
-            android:textSize="14sp"
+            android:textSize="11sp"
             android:padding="12dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="3">
 
         <Button
             android:id="@+id/nuevo"

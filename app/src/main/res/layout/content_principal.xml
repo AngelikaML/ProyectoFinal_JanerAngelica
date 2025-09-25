@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/io_fondo"
     tools:showIn="@layout/app_bar_principal">
 
     <!-- Contenedor principal -->
@@ -43,8 +44,8 @@
                     android:layout_marginBottom="12dp"
                     android:text="Ingrese Placa"
                     android:gravity="center"
-                    android:textColor="#2C3E50"
-                    android:textSize="26sp"
+                    android:textColor="#009600"
+                    android:textSize="35sp"
                     android:textStyle="bold" />
 
                 <EditText
@@ -102,7 +103,7 @@
                             android:singleLine="true"
                             android:text="ID"
                             android:textColor="#2C3E50"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -112,7 +113,7 @@
                             android:singleLine="true"
                             android:text="PLACA"
                             android:textColor="#2C3E50"
-                            android:textSize="13sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                         <TextView
